@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87f6f2afe245b940b52bffda7baf44c, type: 3}
   m_Name: TestUpgrade
   m_EditorClassIdentifier: 
-  name: 
-  moneyPerSecond: 0
-  moneyPerClick: 0
+  name: WOOOOO
+  description: this is a test
+  cost: 5
+  timeMultiplier: 0
+  clickMultiplier: 2

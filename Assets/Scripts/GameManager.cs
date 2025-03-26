@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Money Stuff")]
     public int money = 0;
-    [SerializeField] Text moneyText;
+    public Text moneyText;
     
     void Start() {
         moneyText.text = "Money: $" + money.ToString();
