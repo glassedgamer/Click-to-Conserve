@@ -5,8 +5,12 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Upgrades : ScriptableObject
 {
+    [Header("Info Stuff")]
     public new string name;
+    public string description;
+    public int cost;
 
-    public int moneyPerSecond;
-    public int moneyPerClick;
+    [Header("Multipliers")]
+    public int timeMultiplier;
+    public int clickMultiplier;
 }

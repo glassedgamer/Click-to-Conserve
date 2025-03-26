@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
 
     [Header("Money Stuff")]
-    [SerializeField] int money = 0;
+    public int money = 0;
     [SerializeField] Text moneyText;
     
     void Start() {
