@@ -11,6 +11,6 @@ public class Upgrades : ScriptableObject
     public int cost;
 
     [Header("Multipliers")]
-    public int timeMultiplier;
-    public int clickMultiplier;
+    public float timeMultiplier;
+    public float clickMultiplier;
 }

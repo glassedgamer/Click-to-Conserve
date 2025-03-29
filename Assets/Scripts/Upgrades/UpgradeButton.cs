@@ -33,8 +33,8 @@ public class UpgradeButton : MonoBehaviour
             gameManager.money -= upgradeInfo.cost;
             gameManager.moneyText.text = "Money: $" + gameManager.money.ToString();
 
-            //clickPower *= upgradeInfo.clickMultiplier;
             upgradeManager.availableUpgrades.Remove(upgradeInfo);
+            InitializeInfo();
         }
     }
 }
