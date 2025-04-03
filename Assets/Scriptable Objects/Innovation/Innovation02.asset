@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Smart Supply Chain Integration
   description: 
   cost: 200
-  timeMultiplier: 0
+  timeMultiplier: 1
   clickMultiplier: 3

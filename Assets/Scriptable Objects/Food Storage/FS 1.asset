@@ -16,4 +16,4 @@ MonoBehaviour:
   description: 
   cost: 120
   timeMultiplier: 2
-  clickMultiplier: 0
+  clickMultiplier: 1

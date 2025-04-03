@@ -7,21 +7,26 @@ public class GameManager : MonoBehaviour
 {
 
     [Header("Money Stuff")]
-    public int money = 0;
+    public float money = 0;
     public Text moneyText;
+
+    public float moneyMultiplier = 1f;
+    public float moneyPerSecond = 0.1f;
     
     void Start() {
         moneyText.text = "Money: $" + money.ToString();
     }
 
     void Update() {
-        
+        money += moneyPerSecond * Time.deltaTime;
+
+        moneyText.text = "Money: $" + money.ToString("0");
     }
 
     // Stuff happens when food clicker button is pressed
     public void FoodClickerButtonStuff()
     {
-        money++;
-        moneyText.text = "Money: $" + money.ToString();
+        money += moneyMultiplier;
+        moneyText.text = "Money: $" + money.ToString("");
     }
 }

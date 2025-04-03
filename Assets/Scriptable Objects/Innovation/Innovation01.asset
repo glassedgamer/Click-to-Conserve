@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Automated Monitoring Systems
   description: 
   cost: 15
-  timeMultiplier: 0
-  clickMultiplier: 15
+  timeMultiplier: 1
+  clickMultiplier: 1.5

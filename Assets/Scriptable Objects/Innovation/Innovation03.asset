@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Online Farmer's Market
   description: 
   cost: 900
-  timeMultiplier: 0
+  timeMultiplier: 1
   clickMultiplier: 4.5
