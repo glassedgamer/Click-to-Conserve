@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: NP 3
   m_EditorClassIdentifier: 
   name: Non-Perishables
-  description: 
-  cost: 240
-  timeMultiplier: 2.5
-  clickMultiplier: 4.5
+  description: These foods have the longest shelf life, minimizing waste and allowing
+    for extensive storage and distribution, and include items like dried beans, grains,
+    canned goods, and dehydrated foods.
+  cost: 350
+  timeMultiplier: 3
+  clickMultiplier: 3

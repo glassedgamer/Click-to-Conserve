@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87f6f2afe245b940b52bffda7baf44c, type: 3}
   m_Name: NP 2
   m_EditorClassIdentifier: 
-  name: Processed Foods
-  description: 
-  cost: 120
+  name: Less Perishable
+  description: These foods have a longer shelf life than highly perishable items,
+    allowing for more time between harvest/production and consumption, and may include
+    root vegetables, hardy fruits, and frozen goods.
+  cost: 200
   timeMultiplier: 2
-  clickMultiplier: 3
+  clickMultiplier: 2

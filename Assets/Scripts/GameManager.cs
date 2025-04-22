@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    AudioManager am;
 
     [Header("Money Stuff")]
     public float money = 0;
@@ -23,16 +24,23 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject loseScreen;
 
     [Header("Time Stuff")]
-    [SerializeField] float startingTime;
+    public float startingTime;
     float remainingTime;
-    [SerializeField] Text timerText;
+    public Text timerText;
 
     [Header("Waste Bin stuff")]
     [SerializeField] float maxWaste;
     float currentWaste = 0;
     [SerializeField] Slider wasteSlider;
-    
+
+    [Header("Rando UI")]
+    [SerializeField] RawImage RRR;
+    [SerializeField] Color cantReduce;
+    [SerializeField] Color reduce;
+
     void Start() {
+        am = FindObjectOfType<AudioManager>();
+
         remainingTime = startingTime;
 
         wasteSlider.maxValue = maxWaste;
@@ -55,6 +63,8 @@ public class GameManager : MonoBehaviour
         }
         if(currentWaste == maxWaste) {
             // Reseting waste once it reaches max val
+            am.Play("Waste Bin");
+
             currentWaste = 0;
             wasteSlider.value = currentWaste;
 
@@ -64,11 +74,21 @@ public class GameManager : MonoBehaviour
 
         WinCondition();
         LoseCondition();
+
+        if (money >= 150)
+        {
+            RRR.color = cantReduce;
+        } else
+        {
+            RRR.color = reduce;
+        }
     }
 
     // Stuff happens when food clicker button is pressed
     public void FoodClickerButtonStuff()
     {
+        am.Play("Food Click");
+
         money += moneyMultiplier;
         moneyText.text = "Money: $" + money.ToString("");
     }
@@ -88,12 +108,14 @@ public class GameManager : MonoBehaviour
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
 
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        timerText.text = string.Format("Expiration: {0:00}:{1:00}", minutes, seconds);
     }
 
     void ThrowOutFood()
     {
         //Do the thing
+        am.Play("Expiration");
+
         currentWaste++;
         wasteSlider.value = currentWaste;
     }
@@ -118,6 +140,22 @@ public class GameManager : MonoBehaviour
     void RestartGame() {
         if(Input.GetKeyDown(KeyCode.R)) {
             SceneManager.LoadScene("MainGame");
+        }
+    }
+
+    public void Compost()
+    {
+        if(money >= 150)
+        {
+            am.Play("Buy");
+
+            currentWaste = 0;
+            money += 500;
+
+            wasteSlider.value = currentWaste;
+        } else
+        {
+            am.Play("Can't Click");
         }
     }
 }

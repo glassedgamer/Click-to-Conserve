@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87f6f2afe245b940b52bffda7baf44c, type: 3}
   m_Name: Innovation03
   m_EditorClassIdentifier: 
-  name: Online Farmer's Market
-  description: 
+  name: Hydroponic Food Computer
+  description: 'This is a controlled environment system for growing food using nutrient-rich
+    water solutions instead of soil. It allows for efficient and often faster cultivation
+    of crops in a smaller space and with potentially less water usage compared to
+    traditional farming. '
   cost: 900
   timeMultiplier: 1
-  clickMultiplier: 4.5
+  clickMultiplier: 3

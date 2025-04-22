@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87f6f2afe245b940b52bffda7baf44c, type: 3}
   m_Name: FS 2
   m_EditorClassIdentifier: 
-  name: Food Storage I
-  description: 
-  cost: 400
+  name: Enhanced Preservation
+  description: Enhanced preservation techniques include vacuum sealing, dehydration,
+    and pickling, which extends food shelf life for weeks to months by inhibiting
+    microbial growth and enzymatic activity.
+  cost: 300
   timeMultiplier: 2.5
   clickMultiplier: 1

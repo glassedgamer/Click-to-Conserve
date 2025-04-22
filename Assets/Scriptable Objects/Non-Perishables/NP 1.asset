@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87f6f2afe245b940b52bffda7baf44c, type: 3}
   m_Name: NP 1
   m_EditorClassIdentifier: 
-  name: Semi-Perishables
-  description: 
+  name: High Perishables
+  description: These are foods with a very short shelf life, requiring rapid sale
+    and careful handling to avoid significant spoilage, such as delicate fruits,
+    leafy greens, and raw meats.
   cost: 60
   timeMultiplier: 1.5
   clickMultiplier: 1.5

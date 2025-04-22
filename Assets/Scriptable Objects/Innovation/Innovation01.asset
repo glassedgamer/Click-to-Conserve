@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87f6f2afe245b940b52bffda7baf44c, type: 3}
   m_Name: Innovation01
   m_EditorClassIdentifier: 
-  name: Automated Monitoring Systems
-  description: 
+  name: Urban Agriculture
+  description: "Urban agriculture involves\_cultivating crops and raising livestock
+    within city and suburban environments.\_It encompasses various forms like community
+    gardens, rooftop farms, and vertical farms, offering benefits such as improved
+    access to healthy food, enhanced local food systems, and opportunities for community
+    engagement."
   cost: 15
   timeMultiplier: 1
   clickMultiplier: 1.5

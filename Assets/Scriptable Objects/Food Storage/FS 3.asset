@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87f6f2afe245b940b52bffda7baf44c, type: 3}
   m_Name: FS 3
   m_EditorClassIdentifier: 
-  name: Food Storage I
-  description: 
-  cost: 1000
+  name: Long-term Preservation
+  description: Long-term preservation methods such as canning and freeze-drying allow
+    for the storage of food for many months or even years, often for emergency preparedness
+    and maximizing seasonal harvests.
+  cost: 800
   timeMultiplier: 3
   clickMultiplier: 1

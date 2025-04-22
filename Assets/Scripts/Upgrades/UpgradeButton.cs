@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class UpgradeButton : MonoBehaviour
 {
+    AudioManager am;
+
     [Header("UI Elements")]
     [SerializeField] Text nameText;
     //[SerializeField] Text descriptionText;
@@ -12,8 +14,9 @@ public class UpgradeButton : MonoBehaviour
     [SerializeField] Text clickMultiplierText;
     [SerializeField] Text timeMultiplierText;
     [SerializeField] RawImage BG;
+    [SerializeField] UpgradeInfoPanel infoPanel;
 
-    [Header("Upgrade Info")]
+    [Header("Upgrade Data")]
     public Upgrades upgradeInfo;
     [SerializeField] UpgradeManager upgradeManager;
     [SerializeField] GameManager gameManager;
@@ -24,6 +27,7 @@ public class UpgradeButton : MonoBehaviour
 
     void Start() {
         //InitalizeInfo();
+        am = FindObjectOfType<AudioManager>();
     }
 
     void Update()
@@ -47,6 +51,8 @@ public class UpgradeButton : MonoBehaviour
 
     public void PurchaseUpgrade() {
         if(gameManager.money >= upgradeInfo.cost) {
+            am.Play("Buy");
+
             // Deduct cost from total money
             gameManager.money -= upgradeInfo.cost;
             gameManager.moneyText.text = "Money: $" + gameManager.money.ToString();
@@ -54,8 +60,48 @@ public class UpgradeButton : MonoBehaviour
             gameManager.moneyMultiplier *= upgradeInfo.clickMultiplier;
             gameManager.moneyPerSecond = (gameManager.moneyPerSecond + 0.5f) * upgradeInfo.timeMultiplier;
 
+            gameManager.startingTime += 2;
+            gameManager.loseMoneyVal *= upgradeInfo.timeMultiplier;
+
             upgradeManager.availableUpgrades.Remove(upgradeInfo);
+
+            ChangeFoodIcon();
+
             InitializeInfo();
+        } else
+        {
+            am.Play("Can't Click");
         }
     }
+
+    void ChangeFoodIcon()
+    {
+        if (upgradeInfo.name == "High Perishables")
+        {
+            upgradeManager.clickMe.SetActive(false);
+            upgradeManager.chicken.SetActive(true);
+            upgradeManager.carrots.SetActive(false);
+            upgradeManager.can.SetActive(false);
+        } else if (upgradeInfo.name == "Less Perishable")
+        {
+            upgradeManager.clickMe.SetActive(false);
+            upgradeManager.chicken.SetActive(false);
+            upgradeManager.carrots.SetActive(true);
+            upgradeManager.can.SetActive(false);
+        } else if (upgradeInfo.name == "Non-Perishables")
+        {
+            upgradeManager.clickMe.SetActive(false);
+            upgradeManager.chicken.SetActive(false);
+            upgradeManager.carrots.SetActive(false);
+            upgradeManager.can.SetActive(true);
+        }
+    }
+
+    public void ShowInfo()
+    {
+        am.Play("Menu Click");
+
+        infoPanel.ShowUpgradeInfo(upgradeInfo);
+    }
+
 }

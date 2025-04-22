@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87f6f2afe245b940b52bffda7baf44c, type: 3}
   m_Name: Innovation02
   m_EditorClassIdentifier: 
-  name: Smart Supply Chain Integration
-  description: 
+  name: "Virtual Farmer\u2019s Market"
+  description: This is an online platform that connects farmers directly with consumers.
+    Instead of a physical marketplace, farmers can list their produce online, and
+    customers can browse, order, and often arrange for delivery or pick-up, providing
+    a convenient way to buy fresh, locally sourced food.
   cost: 200
   timeMultiplier: 1
   clickMultiplier: 3

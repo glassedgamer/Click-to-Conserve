@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87f6f2afe245b940b52bffda7baf44c, type: 3}
   m_Name: FS 1
   m_EditorClassIdentifier: 
-  name: Food Storage I
-  description: 
+  name: Basic Food Storage
+  description: Basic pantry and refrigerator storage uses organization and proper
+    temperatures to prevent rapid spoilage of everyday foods, extending their usability
+    for days to a few weeks.
   cost: 120
   timeMultiplier: 2
   clickMultiplier: 1
